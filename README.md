@@ -1,91 +1,60 @@
-<div align="center"> 
-  <h1>Quantum Dynamic Pricing</h1>
+# Quantum Dynamic Pricing
 
-  </div>
-<div align="center"> 
+Welcome to the Quantum Dynamic Pricing project! This repository demonstrates the application of Quantum Neural Networks (QNNs) for forecasting taxi fare rates using the OLA CABS dataset. The code provided can be used as a foundation for utilizing QNNs on various dynamic pricing datasets to determine the prices of different products or services.
 
-   ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-   ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-   
-</div> 
-<div align="center"> 
-  <img src="res/dynamic.png" height=300>
- </div> 
+## Table of Contents
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Exploring and Processing the Dataset](#exploring-and-processing-the-dataset)
+- [Creating the Quantum Neural Network](#creating-the-quantum-neural-network)
+- [Training the QNN](#training-the-qnn)
+- [Visualization](#visualization)
+- [Predictions and Evaluation](#predictions-and-evaluation)
+- [Further Improvements](#further-improvements)
 
-<br>
+## Introduction
+Dynamic pricing plays a crucial role in various industries, allowing businesses to optimize revenue by adjusting prices based on real-time market conditions. Quantum Neural Networks provide a unique approach to tackle complex pricing optimization problems. This project focuses on predicting taxi fare rates as a case study, but the same approach can be applied to other pricing scenarios.
 
-## Context
-Pricing is very strategic and it makes a big difference in how a business operates. Many businesses operate on a fixed pricing model comes with serious drawbacks. It relies on fickle buyers who are price sensitive. This makes you more vulnerable to price wars. If one of your competitors drops their prices, your buyers are at risk of jumping ship. Also fixed-price model throttles long-term relationships. You don’t have time to connect with customers.<br>
-This is where <strong>Dynamic Pricing</strong> comes to save the day!
-<br>
-<br>
-<br>
+## Installation
+To run this project, you'll need the following libraries:
+- TensorFlow 2.7.0
+- TensorFlow Quantum 0.7.2
+- pandas
+- numpy
+- scikit-learn
+- matplotlib
 
+You can install these dependencies using the following commands:
+```bash
+pip install tensorflow==2.7.0
+pip install tensorflow-quantum==0.7.2
+pip install pandas numpy scikit-learn matplotlib
+```
 
-## What is <strong>Dynamic Pricing </strong> ?
-Dynamic pricing, a strategy which enables businesses to provide flexible prices for products and services is now catching on across hospitality, retail, travel and entertainment industry segments. Whether the aim is to stay profitable, fill up an airplane or sell as many sports tickets or products online as possible, companies today are using dynamic pricing to achieve their business goals.
-<br>
-<br>
-<br>
-## Dataset
-Dynamic Pricing can be applied to various buissness, but here we apply it to predict fare prices of OLA CABS.<br>
-The dataset contains various parameters on which the price of fare depends.<br>
-Click here to download the dataset.
-<br>
-<br>
-<br>
+## Exploring and Processing the Dataset
+The provided code demonstrates data exploration and preprocessing steps for the OLA CABS dataset. The dataset is loaded, and features like pickup and drop times are processed for model training. Irrelevant columns are dropped, and data is normalized using MinMaxScaler.
 
-## Methodology:
-<img align="right" src="res/Qlayers.png" width="320" height="200">
+## Creating the Quantum Neural Network
+The Quantum Neural Network is constructed using TensorFlow Quantum (TFQ) and Cirq. The code provides functions to encode data into quantum circuits and design the model circuit, which consists of layers of quantum gates. You can customize the encoding and architecture to suit your specific pricing problem.
 
-- [Dynamic Price Prediction](https://github.com/TheHarshal30/Quantum-Finance/blob/main/Quantum%20Neural%20Network/QNN.ipynb) : 
-  - Converting Classical data into Quantum Data : <br>
-     We convert all the classical data into a circuit. <br>
-     The encoder used here is:<br>
-     RX * (pi * i)<br>
-     RY * (pi * i)<br>
-     where i belongs to [0,1] (i.e normalized data). <br>
-  - Quantum Layers : <br>
-     A layer consists of CNOT gate followed by RY and RZ gates <br>
-  - Model : <br>
-      We create the Quantum model using Google's Cirq. <br>
-      We know that, the number of parameters is 2 paramenters per Qubit multiplied by depth of circuit.<br>
-- [Optimal Discount Pricing](https://github.com/TheHarshal30/Quantum-Finance/blob/main/Quantum%20Neural%20Network/discountp.ipynb) : <br>
-   We also made a Optimal Discount Pricing Engine using Dwave's Simulated Annealing Sampler.(Ising Model) <br>
-   We have demonstrated the results using sample data for ease of understanding. <br> 
-   
-<br>
-<br>
-<br>
+## Training the QNN
+The QNN is trained using the encoded data. The provided code includes options for adjusting training hyperparameters such as the number of epochs and batch size. The model is compiled and trained on the dataset.
 
+## Visualization
+Visualizing the training history helps monitor the model's convergence and performance. The code includes plotting functions to visualize the training and validation loss over epochs.
 
-##  Conclusion:
-<img align="right" src="res/outputQNN.png" width="350" height="200"> 
+## Predictions and Evaluation
+After training, the QNN can make predictions on the test dataset. The code demonstrates how to make predictions and evaluates the model's performance using mean squared error (MSE).
 
-Even with small number of epochs and short circuit depth the loss is pretty good. <br>
-Implementing the code on Quantum Hardware with high number of epoches and large circuit depths would result in great accuracies in very less time.
+## Further Improvements
+To enhance the project, consider the following steps:
+- Experiment with different QNN architectures, such as varying the number of qubits and layers.
+- Perform hyperparameter tuning to optimize the model's performance.
+- Explore different quantum layers and differentiators provided by TFQ.
+- Investigate alternative preprocessing techniques and feature engineering strategies.
+- Extend the project to other dynamic pricing scenarios beyond taxi fare prediction.
 
+Feel free to contribute to this project by implementing improvements or applying them to different pricing datasets!
 
-## TechStack Used:
-<ul>
-<li>
-Cirq
-</li>
-<li>
-Tensorflow Quantum
-</li>
-<li>
-Dwave Systems
-</li>
-<li>
-Pandas
-</li>
-<li>
-Numpy
-</li>
-</ul>
-
-
-
-## Support
-⭐ Please Star and share the project. Thanks! ❤️
+## Conclusion
+The Quantum Dynamic Pricing project showcases the application of Quantum Neural Networks for dynamic pricing scenarios. By utilizing the provided code and extending it to other datasets, you can explore the potential of quantum computing in optimizing pricing strategies for various industries. Happy coding!
