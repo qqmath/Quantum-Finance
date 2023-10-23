@@ -1,4 +1,4 @@
-# Quantum Dynamic Pricing
+# Quantum Dynamic Pricing and Discounts
 
 Welcome to the Quantum Dynamic Pricing project! This repository demonstrates the application of Quantum Neural Networks (QNNs) for forecasting taxi fare rates using the OLA CABS dataset. The code provided can be used as a foundation for utilizing QNNs on various dynamic pricing datasets to determine the prices of different products or services.
 
